@@ -1,0 +1,221 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprite/fullroster.png" type="Texture" id=1]
+[ext_resource path="res://Button.gd" type="Script" id=2]
+[ext_resource path="res://sprite/Luvian_icon.png" type="Texture" id=3]
+[ext_resource path="res://sprite/Celea_icon.png" type="Texture" id=4]
+[ext_resource path="res://sprite/charaselect_2p_1_002.png" type="Texture" id=5]
+[ext_resource path="res://sprite/mask.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/BD_Cartoon_Shout.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Go.gd" type="Script" id=8]
+[ext_resource path="res://Music/10convert.com_Puyo-Puyo-20th-Anniversary-It-s-Character-Select_PY8AW02V5IY.ogg" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 87
+outline_size = 10
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 65
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Roster" type="Node2D"]
+
+[node name="Roster" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="fullroster" type="Sprite" parent="Roster"]
+position = Vector2( 847, 350 )
+scale = Vector2( 0.147465, 0.147465 )
+texture = ExtResource( 1 )
+
+[node name="Illiria" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -1193.0
+margin_top = -1705.0
+margin_right = -658.0
+margin_bottom = -993.0
+script = ExtResource( 2 )
+
+[node name="Luvian" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -659.0
+margin_top = -1705.0
+margin_right = -124.0
+margin_bottom = -993.0
+script = ExtResource( 2 )
+index = 1
+sprite = ExtResource( 3 )
+
+[node name="Celea" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -124.0
+margin_top = -1705.0
+margin_right = 232.0
+margin_bottom = -993.0
+script = ExtResource( 2 )
+index = 2
+sprite = ExtResource( 4 )
+
+[node name="Maylee" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = 232.0
+margin_top = -1695.0
+margin_right = 767.0
+margin_bottom = -993.0
+script = ExtResource( 2 )
+
+[node name="Ross" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = 767.0
+margin_top = -1695.0
+margin_right = 1193.0
+margin_bottom = -993.0
+script = ExtResource( 2 )
+
+[node name="Mond" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -1193.0
+margin_top = -993.0
+margin_right = -658.0
+margin_bottom = -280.0
+script = ExtResource( 2 )
+
+[node name="Ninfea" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -658.0
+margin_top = -993.0
+margin_right = -124.0
+margin_bottom = -280.0
+script = ExtResource( 2 )
+
+[node name="Ada" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = -124.0
+margin_top = -993.0
+margin_right = 232.0
+margin_bottom = -280.0
+script = ExtResource( 2 )
+
+[node name="Sonette" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = 232.079
+margin_top = -992.662
+margin_right = 766.079
+margin_bottom = -279.662
+script = ExtResource( 2 )
+
+[node name="Etoile" type="Button" parent="Roster/fullroster"]
+show_behind_parent = true
+margin_left = 767.0
+margin_top = -993.0
+margin_right = 1194.0
+margin_bottom = -280.0
+script = ExtResource( 2 )
+
+[node name="help1" type="Sprite" parent="."]
+light_mask = 4
+position = Vector2( 206, 151 )
+scale = Vector2( 0.5625, 0.5625 )
+
+[node name="charaselect_2p_1_002" type="Sprite" parent="help1"]
+show_behind_parent = true
+position = Vector2( 145.778, 16 )
+scale = Vector2( 1.45778, 1.45778 )
+z_index = -2
+texture = ExtResource( 5 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 3, -10, 800, 400 )
+
+[node name="Light2D" type="Light2D" parent="help1/charaselect_2p_1_002"]
+position = Vector2( 39.0244, 0 )
+texture = ExtResource( 6 )
+mode = 3
+range_item_cull_mask = 4
+
+[node name="charaselect_2p_1_003" type="Sprite" parent="help1"]
+show_behind_parent = true
+position = Vector2( -252.444, 250.667 )
+scale = Vector2( 1.96388, 1.96388 )
+z_index = 1
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 850, 0, 70, 60 )
+
+[node name="Name" type="Label" parent="help1"]
+margin_left = -164.07
+margin_top = 222.222
+margin_right = 611.93
+margin_bottom = 320.222
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.8, 0.972549, 1 )
+
+[node name="help2" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 208, 400 )
+scale = Vector2( 0.5625, 0.5625 )
+z_index = -1
+
+[node name="charaselect_2p_1_003" type="Sprite" parent="help2"]
+position = Vector2( 142.222, 28.4444 )
+scale = Vector2( 1.45778, 1.45778 )
+z_index = -2
+texture = ExtResource( 5 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 3, 370, 800, 400 )
+
+[node name="Light2D2" type="Light2D" parent="help2"]
+position = Vector2( 199.111, 21.52 )
+scale = Vector2( 1.45778, 1.49413 )
+texture = ExtResource( 6 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="charaselect_2p_1_004" type="Sprite" parent="help2"]
+show_behind_parent = true
+position = Vector2( -256, 232.889 )
+scale = Vector2( 1.96388, 1.96388 )
+z_index = 1
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 837.891, 132.447, 90.8817, 55.725 )
+
+[node name="Name" type="Label" parent="help2"]
+margin_left = -159.403
+margin_top = 199.111
+margin_right = 844.597
+margin_bottom = 331.111
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 0.972549, 0.501961, 0.627451, 1 )
+
+[node name="Go" type="Button" parent="."]
+margin_left = 704.0
+margin_top = -4.0
+margin_right = 995.0
+margin_bottom = 103.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0.921569, 0.129412, 0.129412, 1 )
+disabled = true
+action_mode = 0
+text = "GO!"
+script = ExtResource( 8 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+[connection signal="mouse_entered" from="Roster/fullroster/Illiria" to="Roster/fullroster/Illiria" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Roster/fullroster/Illiria" to="Roster/fullroster/Illiria" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Roster/fullroster/Luvian" to="Roster/fullroster/Luvian" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Roster/fullroster/Luvian" to="Roster/fullroster/Luvian" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Roster/fullroster/Celea" to="Roster/fullroster/Celea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Roster/fullroster/Celea" to="Roster/fullroster/Celea" method="_on_mouse_exited"]

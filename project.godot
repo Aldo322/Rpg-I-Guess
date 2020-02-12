@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="rpg i guess"
+run/main_scene="res://Main menu (i guess).tscn"
+boot_splash/bg_color=Color( 0.0823529, 0.0156863, 0.392157, 1 )
+config/icon="res://icon.png"
+
+[autoload]
+
+Go="*res://Go.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+window/per_pixel_transparency/splash=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+environment/default_environment="res://default_env.tres"

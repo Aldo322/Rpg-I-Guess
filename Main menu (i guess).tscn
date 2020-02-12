@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/BD_Cartoon_Shout.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menu.gd" type="Script" id=2]
+[ext_resource path="res://Music/10convert.com_Super-Smash-Bros-Ultimate-Main-Menu-Music_klqyHegI1vs.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 966.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 1 )
+text = "RPG i guess."
+
+[node name="Label2" type="Label" parent="."]
+margin_top = 565.0
+margin_right = 589.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 2 )
+text = "made by aldo32 and taaaaah"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 768.0
+margin_top = 565.0
+margin_right = 1357.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 2 )
+text = "version 1.0.1"
+
+[node name="1" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 256.0
+margin_right = 640.0
+margin_bottom = 363.0
+custom_fonts/font = SubResource( 3 )
+text = "P1 VS CPU"
+script = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
