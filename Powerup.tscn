@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://weapon powerup.gd" type="Script" id=1]
+[ext_resource path="res://sprites/bad shovel.png" type="Texture" id=2]
+[ext_resource path="res://font/Game Commands.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sfx/item get.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+use_mipmaps = true
+font_data = ExtResource( 3 )
+
+[node name="Powerup" type="Area2D"]
+pause_mode = 2
+position = Vector2( 1008, 352 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3.33786e-06, -2.71797e-05 )
+scale = Vector2( 1.33334, 1.33333 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -100.0
+margin_top = -42.0
+margin_right = 102.0
+margin_bottom = -3.8147e-06
+custom_fonts/font = SubResource( 2 )
+text = "YOU GOT A
+
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+[connection signal="body_entered" from="." to="." method="_on_weapon_powerup_body_entered"]

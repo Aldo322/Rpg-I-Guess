@@ -1,0 +1,315 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player/idle/idle.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player/shovl.png" type="Texture" id=3]
+[ext_resource path="res://sprites/player/walk/walk.png" type="Texture" id=4]
+[ext_resource path="res://sprites/player/idle/idle2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/jump/jump.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/idle/shue.png" type="Texture" id=7]
+[ext_resource path="res://sprites/player/walk/shoe.png" type="Texture" id=8]
+[ext_resource path="res://sprites/player/jump/shoeump.png" type="Texture" id=9]
+[ext_resource path="res://sfx/jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://sprites/player/shovel attack/shovel.png" type="Texture" id=11]
+[ext_resource path="res://sprites/player/shovel attack/actual_shovel.png" type="Texture" id=12]
+[ext_resource path="res://sfx/shovel.wav" type="AudioStream" id=13]
+[ext_resource path="res://sprites/tilesets/cave_block (particles).png" type="Texture" id=14]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 16 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shovel sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -6, -2 ), Vector2( -6, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shoe sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shoe sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 9 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "shovel"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shovel sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 12 ), ExtResource( 3 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 13 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("shoe sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shovel sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -6, -2 ), Vector2( -2, -3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shoe sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 56.0
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "jump"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "shovel"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+priority = 3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+priority = 3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachine" id=21]
+states/idle/node = SubResource( 8 )
+states/idle/position = Vector2( 24, 43 )
+states/jump/node = SubResource( 9 )
+states/jump/position = Vector2( 24, 185 )
+states/shovel/node = SubResource( 10 )
+states/shovel/position = Vector2( 316, 185 )
+states/walk/node = SubResource( 11 )
+states/walk/position = Vector2( 316, 43 )
+transitions = [ "idle", "jump", SubResource( 12 ), "idle", "walk", SubResource( 13 ), "walk", "shovel", SubResource( 14 ), "walk", "jump", SubResource( 15 ), "jump", "shovel", SubResource( 16 ), "idle", "shovel", SubResource( 17 ), "shovel", "idle", SubResource( 18 ), "walk", "idle", SubResource( 19 ), "jump", "idle", SubResource( 20 ) ]
+start_node = "idle"
+graph_offset = Vector2( -459, -20 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 608, 544 )
+script = ExtResource( 1 )
+run_speed = 150
+jump_speed = -275
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -6, -2 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 5 )
+
+[node name="shovel sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -6, 0 )
+scale = Vector2( 1.2973, 1.2963 )
+texture = ExtResource( 3 )
+
+[node name="shoe sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -6, -2 )
+scale = Vector2( 1.2973, 1.2963 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -16, 16 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 16 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -8, -16 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 3 )
+anims/jump = SubResource( 4 )
+anims/shovel = SubResource( 5 )
+anims/walk = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="ShovelParticles" type="CPUParticles2D" parent="."]
+position = Vector2( -8, -16 )
+z_index = 2
+emitting = false
+amount = 12
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+texture = ExtResource( 14 )
+emission_shape = 1
+emission_sphere_radius = 32.0
+gravity = Vector2( 0, 192 )
+initial_velocity = 32.0
+initial_velocity_random = 0.1
+scale_amount = 0.5
+scale_amount_random = 0.1
+
+[node name="shovel collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shovel collision"]
+position = Vector2( -8, 0 )
+shape = SubResource( 7 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 21 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 22 )
+[connection signal="body_entered" from="shovel collision" to="." method="_on_shovel_collision_body_entered"]
+[connection signal="body_exited" from="shovel collision" to="." method="_on_shovel_collision_body_exited"]

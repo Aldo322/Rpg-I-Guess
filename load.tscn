@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://font/Game Commands.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 336.0
+margin_right = 640.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 1 )
+text = "LOAD"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -288.0
+margin_top = 64.0
+margin_right = 1302.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 2 )
+text = "this is a menu
+
+ i swear"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Button" to="Button" method="_on_Button_button_down"]

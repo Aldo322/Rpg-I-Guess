@@ -15,23 +15,59 @@ _global_script_class_icons={
 
 [application]
 
-config/name="rpg i guess"
-run/main_scene="res://Main menu (i guess).tscn"
-boot_splash/bg_color=Color( 0.0823529, 0.0156863, 0.392157, 1 )
-config/icon="res://icon.png"
+config/name="metroidvania"
+config/description="hi"
+run/main_scene="res://load.tscn"
+config/icon="res://sprites/bad shovel.png"
 
 [autoload]
 
-Go="*res://Go.gd"
+global="*res://global.gd"
+PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
+IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+UserData="*res://addons/github-integration/scripts/user_data.gd"
 
-[display]
+[editor_plugins]
 
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
-window/per_pixel_transparency/splash=true
+enabled=PoolStringArray( "github-integration" )
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+shovel={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_save={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
